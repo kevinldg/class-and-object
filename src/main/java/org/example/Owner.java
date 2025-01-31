@@ -11,6 +11,11 @@ public class Owner {
     };
 
     public Owner(String firstName, String lastName, int age, Gender gender) {
+
+        if (age < 18) {
+            throw new IllegalArgumentException("Das Mindestalter für einen Besitzer beträgt 18 Jahre. Angegebenes Alter: " + age);
+        }
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
